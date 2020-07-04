@@ -30,5 +30,17 @@ fs.readFile( process.argv[2] + '.html',"utf8", (err, data) => {
     }
   }
 
-  console.log(sheet)
+  // Creates all the classes structures to be saved on the styles.css file
+  let cssContent = "";
+  classes.forEach((name) => {
+    cssContent+= "." + name + "{" + "\n" + "\n" + "}" + "\n";
+  });
+
+
+  // Creates the css file with all the classes
+  fs.writeFile('styles.css', cssContent, (err) => {
+    if (err){
+      return console.log(err);
+    }
+  });
 });
