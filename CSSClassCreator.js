@@ -1,34 +1,34 @@
 const fs = require('fs');
 
-fs.readFile( process.argv[2] + '.html',"utf8", function (err, data) {
-  if (err) {
+fs.readFile( process.argv[2] + '.html',"utf8", (err, data) => {
+  if(err){
     throw err; 
   }
 
   let html = data;
-  let loop = true;
   let classes = [];
-  let ids = [];
-  let i = 0;
+  let hasText = true;
 
-  while(loop){
-    let index = data.charAt(data.indexOf("class=") + 7);
-    console.log(index)
-    if (index == 0){
-        let className = "";
-        let letter = 1;
-        while(index != "\""){
-            className += index;
-            index = data.charAt((data.indexOf("class=") + 7)+ letter);
-            letter++;
-        }
+  // This function is responsible for getting all the class names
+  while(hasText){
+    let gettingName = true;
+    let className = "";
+    let firstIndex = 7;
+    while(gettingName){
+      if(html[html.indexOf("class=") + firstIndex] === (html[html.indexOf("class=") + 6])){
+        gettingName = false;
         classes.push(className);
-        className = "";
-        html = html.slice(index);
-    } else {
-        loop = false;
+        html = html.slice(html.indexOf("class=") + firstIndex);
+        firstIndex = 7;
+      } else {
+        className += html[html.indexOf("class=") + firstIndex];
+        firstIndex++;
+      }
+    }
+    if(html.indexOf("class=") === -1){
+      hasText = false;
     }
   }
-  console.log(classes)
 
+  console.log(sheet)
 });
