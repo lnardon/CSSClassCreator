@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: beige;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.rawHtml {
+    display: flex;
+    width: 90%;
+    height: 80%;
+    background-color: beige;
+    border-radius: 15px;
+    border: 2px solid lightgrey;
+    outline: none;
+    padding: 15px;
+}
+
+.createBtn {
+    
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}

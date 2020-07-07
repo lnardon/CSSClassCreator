@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="test"></div>
-    <h2 class="boilerPlate"></h2>
-    <img src="" alt="" class="banner">
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js"></script>
+    <title>Online CSSClassCreator</title>
+  </head>
+  <body>
+    <header>CSSClassCreator</header>
+    <div class="body">
+      <textarea
+        name="rawHtml"
+        class="rawHtml"
+        cols="30"
+        rows="10"
+        maxlength="5000"
+      ></textarea>
+      <button class="createBtn" onclick="generateCSSWeb()">
+        Generate CSS File
+      </button>
+    </div>
+    <div id="custom"></div>
+    <img src="" alt="" id="idTest" />
+    <footer>Created by Lucas Leifheit Nardon</footer>
+  </body>
 </html>
